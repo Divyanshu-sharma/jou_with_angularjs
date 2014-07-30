@@ -1,0 +1,57 @@
+<!doctype html>
+<html ng-app>
+  <head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.13/angular.min.js"></script>
+<script src="dictionary.js"></script>
+<link rel="stylesheet" type="text/css" href="dictionary.css">
+ </head>
+  <body ng-controller="TodoCtrl">
+    
+        <div class="header-div"><div class="header-div1"><header class="header1"><h2 class="heading2">DICTIONARY</h2></header></div>
+        
+    <div class="left-div"><center><input id="se"class="search" type=search ng-model="q"placeholder="SEARCH.."></center><br>
+     
+         <div class="list-div">
+        <li class="list" ng-repeat="fruit in fruits | filter:q" ng-click="card=true;ok(fruit.name, fruit.des)">
+        {{fruit.name}}
+       </li>
+         </div>
+        
+    </div>
+   <div class="card-header">
+      <div id="cd"  >
+          
+          <div class="card-header1">      
+        <h2 class="card-name">&nbsp;{{ans1}}</h2>
+          <input type="button" value="show" class="show-btn" ng-click="show=true">
+         <input type="button" value="X" class="del-btn" ng-click="delete()">
+       </div>
+       <div class="card-dscrpn" ng-show="show">  
+        <label><h2>{{ans}}</h2></label>
+          </div>
+       
+       
+       </div>
+                  
+    </div>
+        <div class="footer-div"><footer><center><input type="button" ng-click="type=true" value=CLICK class="footer-btn"></center><br><center>Click button for adding new words..</center>
+             
+            </footer>
+            </div>
+      
+      
+      <div ng-class="{'pop':type}" ng-hide="ar";>
+          
+         <div ng-class="{'pop1':type}" ng-show="type">
+             <div id="ds" class="pop1-header">Add items</div>
+         
+        <div ng-hide="arr1"><div class="pop1-div"><input type="text" ng-model="t1" placeholder="Items" name="txt1"><br>
+          <input class="pop1-des" type="text" ng-model="t2" placeholder="Description" name="txt2" ></div>
+          <div class="pop1-btns"><button class="item-btn" ng-click="rr()">Add items.</button>
+          <button class="save-btn" ng-click="arr();arr1=true">save</button></div></div>
+          <center><button class="ok-btn" ng-click="ar=true;refresh()" ng-show="arr1">-OK-</button></center>
+            
+          </div>
+         </div></div>   
+    </body>
+</html>

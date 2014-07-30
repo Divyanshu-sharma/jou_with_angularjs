@@ -1,0 +1,12 @@
+<html ng-app>
+  <head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.13/angular.min.js"></script>
+<script src="dic.js"></script>
+      
+</head>
+        <body ng-controller="todoctrl">
+        <input type="button" value=update ng-click=update()>
+            <input type="button" value=delete ng-click=delete()>
+<input type="button" value=add ng-click=add()>
+            </body>
+    </html>

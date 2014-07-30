@@ -1,0 +1,55 @@
+<!doctype html>
+<html ng-app>
+  <head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.13/angular.min.js"></script>
+<script src="dic.js"></script>
+<link rel="stylesheet" type="text/css" href="dic1.css">
+ </head>
+  <body ng-controller="TodoCtrl">
+    
+        <div style="width:100%"><div style="background:#2dc6ff;border:thin solid white"><header style="text-align:center"><h2 style="color:yellow">DICTIONARY</h2></header></div>
+        
+    <div style="float:left;border:thin solid white;height:450px;width:19.677%;background:#777777"><center><input style="border:thin solid red;margin:4px" type=search ng-model="q" placeholder="SEARCH.."></center><br>
+     
+         <div style="overflow-y:auto;height:400px">
+        <li style="border:thin solid white;padding:4px;margin:2px" ng-repeat="fruit in fruits | filter:q" ng-click="ok(fruit.name, fruit.des)">
+        {{fruit.name}}
+       </li>
+         </div>
+        
+    </div>
+                    
+   <div style="float:left;border:thin solid white;width:80%;height:450px;background:#e5e4e2;overflow-y: auto;float:left">
+            
+        <h1 style="margin:0px;padding:0px;color:red">&nbsp;Description:-</h1>
+            
+        <label><h2>{{ans}}</h2></label>
+          
+               
+    </div>
+
+    
+        <div style="background:#2dc6ff;border:thin solid white;width:99.9%;height:570px"><footer><center><input type="button" ng-click="type=true" value=CLICK style="background:yellow"></center><br><center>Click button for adding new words..</center>
+             
+            <!--<center><button ng-click="refresh()" ng-show="ar" style="background:yellow">Refresh</button></center>-->
+          
+            </footer>
+            </div>
+      
+      
+      <div ng-class="{'pop':type}" ng-hide="ar";>
+          
+         <div ng-class="{'pop1':type}" ng-show="type">
+             <header class="an" style="background:yellow;text-align:center;height:50px;font-size:23px"><div><h3 style="vertical-align:center">Add items</h3></div></header>
+         
+        <div ng-hide="arr1"><input type="text" ng-model="t1" placeholder="Items" name="txt1">
+          <input type="text" ng-model="t2" placeholder="Description" name="txt2">
+          <button ng-click="r()">Add items.</button>
+          <button ng-click="arr();arr1=true">save</button></div>
+          <center><button ng-click="ar=true;refresh()" ng-show="arr1">-ok-</button></center>
+            
+          
+          </div>
+         </div></div>   
+    </body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html ng-app>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.13/angular.min.js">       </script>
+      
+      <script>
+    
+          
+        function TodoCtrl($scope) 
+        {  
+            
+            $scope.arr=["by","nh","jd"];
+            if(localStorage.valu) 
+                
+                $scope.val = localStorage.valu;
+                
+                
+                $scope.ok = function() 
+            {
+                $scope.arr.push($scope.val);
+                localStorage.valu = $scope.arr;
+                    
+            }
+        }
+    
+      </script>    
+  </head>
+    
+    <body ng-controller="TodoCtrl" ng-init="init()">
+        <input type="text" ng-model="val">
+        <input type="button" ng-click="ok();" ng-model="ans">
+       
+    
+    
+    </body>
+</html>    
+    
